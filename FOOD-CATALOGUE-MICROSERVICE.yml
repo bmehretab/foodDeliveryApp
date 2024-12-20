@@ -3,3 +3,11 @@ spring:
     url: jdbc:mysql://localhost:3306/foodcataloguedb
     password: password
     username: root
+ config:
+    import: configserver:http://localhost:1111
+
+custribbon:
+  ribbon: 
+    eureka: 
+      enabled: false
+  listOfServers: http://localhost:8301/restaurant/fetchById/{id} , http://localhost:8300/restaurant/fetchById/{id}
